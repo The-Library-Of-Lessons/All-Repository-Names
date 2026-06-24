@@ -1,1 +1,13 @@
+A-Christian-Guide-for-Wisdom
+Comprehensive-Guide-for-Stress-Management
+Emotional-Intelligence-and-Resilience
+How-to-Build-a-Strong-Team
+Prioritize-Fix-First-Strategy-Guide
+The-Aligned-Life
 The-Art-of-Effective-Communication
+The-Core-Human-Needs
+The-Daily-Loop
+The-Full-Armor-of-God
+The-LeafCutter-Ant-Strategy
+The-Science-of-Resilience
+Think-in-Systems-Change-the-World

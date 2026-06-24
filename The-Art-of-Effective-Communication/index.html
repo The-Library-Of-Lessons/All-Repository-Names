@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Art of Effective Communication — Mastering the Human Connection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0e17;
+    --bg-elev: #111728;
+    --bg-elev-2: #1a2338;
+    --bg-elev-3: #212c46;
+    --border: #262f49;
+    --border-soft: #1c2438;
+    --text: #edf0f8;
+    --text-dim: #9aa6c4;
+    --text-mute: #66708e;
+
+    --amber: #ffb238;
+    --amber-soft: rgba(255,178,56,.13);
+    --teal: #2dd9c0;
+    --teal-soft: rgba(45,217,192,.13);
+    --coral: #ff5c72;
+    --coral-soft: rgba(255,92,114,.13);
+    --violet: #a78bfa;
+    --violet-soft: rgba(167,139,250,.13);
+
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --sidebar-w: 268px;
+    --topbar-h: 68px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 600px at 85% -10%, rgba(167,139,250,.08), transparent 60%),
+      radial-gradient(800px 500px at -10% 20%, rgba(255,178,56,.06), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display); margin:0; letter-spacing:-0.01em;}
+  p{margin:0 0 14px;}
+  ul{margin:0; padding:0;}
+  a{color:inherit;}
+  ::selection{background:var(--amber-soft); color:var(--amber);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--text-mute);
+    display:flex; align-items:center; gap:8px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;display:inline-block;}
+
+  /* ---------- layout ---------- */
+  .sidebar{
+    position:fixed; top:0; left:0; bottom:0; width:var(--sidebar-w);
+    background:var(--bg-elev);
+    border-right:1px solid var(--border-soft);
+    padding:22px 16px;
+    display:flex; flex-direction:column;
+    z-index:40;
+    overflow-y:auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    padding:6px 10px 20px;
+  }
+  .brand-mark{
+    width:34px; height:34px; border-radius:10px;
+    background:conic-gradient(from 180deg, var(--violet), var(--amber), var(--teal), var(--coral), var(--violet));
+    position:relative; flex:none;
+  }
+  .brand-mark::after{
+    content:""; position:absolute; inset:4px; border-radius:7px; background:var(--bg-elev);
+  }
+  .brand-name{font-family:var(--font-display); font-weight:700; font-size:15px; line-height:1.2;}
+  .brand-sub{font-family:var(--font-mono); font-size:10.5px; color:var(--text-mute); letter-spacing:.06em;}
+
+  nav.toc{display:flex; flex-direction:column; gap:2px; margin-top:6px;}
+  nav.toc a{
+    display:flex; align-items:center; gap:11px;
+    padding:9px 10px; border-radius:var(--radius-sm);
+    color:var(--text-dim); text-decoration:none; font-size:13.5px; font-weight:500;
+    border:1px solid transparent;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  nav.toc a svg{flex:none; opacity:.85;}
+  nav.toc a:hover{background:var(--bg-elev-2); color:var(--text);}
+  nav.toc a.active{
+    background:var(--bg-elev-2);
+    color:var(--text);
+    border-color:var(--border);
+  }
+  .navdot{width:6px; height:6px; border-radius:50%; background:var(--border); flex:none; margin-right:-2px;}
+
+  .sidebar-footer{
+    margin-top:auto; padding:14px 10px 4px;
+    border-top:1px solid var(--border-soft);
+    font-size:11.5px; color:var(--text-mute); line-height:1.5;
+  }
+
+  .topbar{
+    position:fixed; top:0; left:var(--sidebar-w); right:0; height:var(--topbar-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 28px;
+    background:rgba(10,14,23,.78);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+    z-index:30;
+  }
+  .topbar-title{font-family:var(--font-mono); font-size:12.5px; color:var(--text-mute); letter-spacing:.08em; text-transform:uppercase; flex:none;}
+  .menu-btn{display:none; background:none; border:1px solid var(--border); color:var(--text); border-radius:8px; padding:8px; cursor:pointer;}
+
+  .topbar-right{display:flex; align-items:center; gap:20px;}
+
+  /* ---------- scroll progress ---------- */
+  .scroll-progress{display:flex; align-items:center; gap:11px;}
+  .sp-track{
+    position:relative; width:130px; height:6px; border-radius:999px;
+    background:var(--bg-elev-3); overflow:hidden; flex:none;
+  }
+  .sp-fill{
+    position:absolute; top:0; left:0; bottom:0; width:0%;
+    background:linear-gradient(90deg, var(--violet), var(--amber) 50%, var(--teal));
+    border-radius:999px; transition:width .08s linear;
+  }
+  .sp-ring{position:relative; width:34px; height:34px; flex:none;}
+  .sp-ring svg{transform:rotate(-90deg);}
+  .sp-ring .ring-track{fill:none; stroke:var(--bg-elev-3); stroke-width:3;}
+  .sp-ring .ring-fill{
+    fill:none; stroke:var(--amber); stroke-width:3; stroke-linecap:round;
+    stroke-dasharray:87.96; stroke-dashoffset:87.96;
+    transition:stroke-dashoffset .08s linear, stroke .2s;
+  }
+  .sp-pct{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-size:9px; color:var(--text); letter-spacing:.01em;
+  }
+
+  .search-wrap{position:relative; width:280px;}
+  .search-wrap input{
+    width:100%; background:var(--bg-elev-2); border:1px solid var(--border);
+    color:var(--text); border-radius:999px; padding:9px 38px 9px 36px;
+    font-family:var(--font-body); font-size:13.5px;
+    outline:none; transition:border-color .15s, background .15s;
+  }
+  .search-wrap input::placeholder{color:var(--text-mute);}
+  .search-wrap input:focus{border-color:var(--violet); background:var(--bg-elev-3);}
+  .search-icon{position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text-mute); pointer-events:none;}
+  .search-count{
+    position:absolute; right:10px; top:50%; transform:translateY(-50%);
+    font-family:var(--font-mono); font-size:10.5px; color:var(--text-mute);
+    background:var(--bg-elev-3); padding:2px 7px; border-radius:999px; display:none;
+  }
+  mark.search-hit{background:var(--amber-soft); color:var(--amber); border-radius:3px; padding:0 1px;}
+  mark.search-hit.current{background:var(--teal-soft); color:var(--teal);}
+
+  main{margin-left:var(--sidebar-w); padding-top:var(--topbar-h);}
+  section{
+    padding:64px 48px;
+    max-width:980px;
+    border-bottom:1px solid var(--border-soft);
+  }
+  section:last-of-type{border-bottom:none;}
+  .section-head{margin-bottom:30px;}
+  .section-head h2{font-size:28px; margin-top:8px; font-weight:700;}
+  .section-head .lede{color:var(--text-dim); font-size:15.5px; max-width:640px; margin-top:10px;}
+
+  /* ---------- hero ---------- */
+  #top{padding-top:54px;}
+  .hero{
+    display:grid; grid-template-columns:1.05fr .95fr; gap:36px; align-items:center;
+  }
+  .hero-copy .eyebrow{margin-bottom:16px;}
+  .hero-copy h1{font-size:42px; line-height:1.12; font-weight:700;}
+  .hero-copy h1 .accent{color:var(--amber);}
+  .hero-copy .sub{color:var(--text-dim); font-size:16.5px; margin-top:18px; max-width:480px;}
+
+  /* ---------- quiz ---------- */
+  .quiz-container{background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; margin-top:20px;}
+  .quiz-card{margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid var(--border-soft);}
+  .quiz-card:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .quiz-q{display:flex; gap:16px; margin-bottom:20px;}
+  .qnum{width:28px; height:28px; border-radius:8px; background:var(--bg-elev-3); color:var(--violet); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:13px; font-weight:700; flex:none;}
+  .quiz-q h4{font-size:18px; line-height:1.4; color:var(--text);}
+  .quiz-opts{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .quiz-opt{
+    background:var(--bg-elev-2); border:1px solid var(--border); border-radius:var(--radius-md);
+    padding:14px 18px; cursor:pointer; transition:all .15s; font-size:14.5px; color:var(--text-dim);
+  }
+  .quiz-opt:hover{border-color:var(--text-mute); color:var(--text);}
+  .quiz-opt.picked{background:var(--bg-elev-3); border-color:var(--violet); color:var(--violet);}
+  .quiz-actions{margin-top:20px; display:flex; justify-content:flex-end;}
+  .btn-reveal{
+    background:var(--violet); color:var(--bg); border:none; border-radius:var(--radius-sm);
+    padding:10px 20px; font-weight:700; font-family:var(--font-display); cursor:pointer; transition:opacity .15s;
+  }
+  .btn-reveal:disabled{opacity:0.5; cursor:default;}
+  .quiz-explain{
+    margin-top:18px; padding:16px; border-radius:var(--radius-md); background:var(--bg-elev-2);
+    border-left:4px solid var(--teal); font-size:14px; color:var(--text-dim); display:none;
+  }
+  .answered .quiz-explain{display:block;}
+  .reveal-correct{background:var(--teal-soft) !important; border-color:var(--teal) !important; color:var(--teal) !important;}
+  .reveal-wrong-pick{background:var(--coral-soft) !important; border-color:var(--coral) !important; color:var(--coral) !important;}
+
+  /* ---------- utils ---------- */
+  #backTop{
+    position:fixed; bottom:30px; right:30px; width:44px; height:44px;
+    background:var(--bg-elev-3); border:1px solid var(--border); color:var(--text);
+    border-radius:12px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; opacity:0; visibility:hidden; transition:all .2s; z-index:50;
+  }
+  #backTop.show{opacity:1; visibility:visible;}
+
+  @media (max-width: 1024px){
+    .sidebar{transform:translateX(-100%); transition:transform .3s ease;}
+    .sidebar.open{transform:translateX(0);}
+    .topbar{left:0;}
+    main{margin-left:0;}
+    .menu-btn{display:block;}
+    .hero{grid-template-columns:1fr; text-align:center;}
+    .hero-copy .sub{margin:18px auto 0;}
+    .quiz-opts{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div id="sidebar" class="sidebar">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-info">
+      <div class="brand-name">Communication</div>
+      <div class="brand-sub">CORE SKILLS</div>
+    </div>
+  </div>
+  <nav class="toc">
+    <a href="#top" class="active"><div class="navdot" style="background:var(--violet)"></div>The Connection</a>
+    <a href="#listening"><div class="navdot"></div>Active Listening</a>
+    <a href="#nonverbal"><div class="navdot"></div>Non-Verbal Cues</a>
+    <a href="#empathy"><div class="navdot"></div>Emotional Intelligence</a>
+    <a href="#quiz"><div class="navdot" style="background:var(--amber)"></div>Knowledge Check</a>
+  </nav>
+  <div class="sidebar-footer">
+    © 2024 The Library of Lessons<br>Effective Communication Guide
+  </div>
+</div>
+
+<header class="topbar">
+  <button id="menuBtn" class="menu-btn">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h14M3 6h14M3 18h14"/></svg>
+  </button>
+  <div class="topbar-title">The Art of Effective Communication</div>
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="5"/><path d="M11 11l4 4"/></svg>
+      <input type="text" id="searchInput" placeholder="Search lessons...">
+      <div id="searchCount" class="search-count"></div>
+    </div>
+    <div class="scroll-progress">
+      <div class="sp-track"><div id="spFill" class="sp-fill"></div></div>
+      <div class="sp-ring">
+        <svg width="34" height="34"><circle class="ring-track" cx="17" cy="17" r="14"/><circle id="ringFill" class="ring-fill" cx="17" cy="17" r="14"/></svg>
+        <div id="spPct" class="sp-pct">0%</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="mainContent">
+  <section id="top">
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot" style="background:var(--violet)"></span>Module 01</div>
+        <h1>Mastering <span class="accent">The Human Connection</span></h1>
+        <p class="sub">Communication is more than just exchanging information. It is about understanding the emotion and intentions behind the information.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="listening">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot" style="background:var(--teal)"></span>Listening</div>
+      <h2>Active Listening</h2>
+      <p class="lede">The most important part of communication isn't talking—it's listening. Active listening involves fully concentrating, understanding, responding, and then remembering what is being said.</p>
+    </div>
+    <p>Many people listen with the intent to reply, not with the intent to understand. To become an active listener, you must practice patience and silence. Avoid interrupting and try to summarize what the other person has said to ensure you've understood them correctly.</p>
+  </section>
+
+  <section id="nonverbal">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot" style="background:var(--coral)"></span>Visuals</div>
+      <h2>Non-Verbal Cues</h2>
+      <p class="lede">Over 55% of communication is non-verbal. Your body language, eye contact, and tone of voice speak much louder than your actual words.</p>
+    </div>
+    <p>A closed posture (arms crossed) can signal defensiveness, while an open posture signals receptivity. Maintaining eye contact shows confidence and respect, while shifting your gaze may indicate discomfort or dishonesty.</p>
+  </section>
+
+  <section id="empathy">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot" style="background:var(--violet)"></span>Empathy</div>
+      <h2>Emotional Intelligence</h2>
+      <p class="lede">Understanding your own emotions and the emotions of others is the cornerstone of effective communication.</p>
+    </div>
+    <p>By practicing empathy, you can see things from the perspective of others. This allows you to tailor your message and delivery to ensure it is received in the way you intended, minimizing conflict and building stronger relationships.</p>
+  </section>
+
+  <section id="quiz">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot" style="background:var(--amber)"></span>Assessment</div>
+      <h2>Knowledge Check</h2>
+      <p class="lede">Test your understanding of the communication principles covered in this guide.</p>
+    </div>
+    <div id="quizList" class="quiz-container">
+      <!-- Quiz injected by JS -->
+    </div>
+  </section>
+</main>
+
+<div id="backTop">
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13l-8-8-8 8"/></svg>
+</div>
+
+<script>
+/* ===================== QUIZ DATA & LOGIC ===================== */
+(function(){
+  const data = [
+    { q:"What percentage of communication is estimated to be non-verbal?", opts:["10-20%","30-40%","Over 50%","Almost 100%"], correct:2, explain:"Studies suggest over 55% of communication comes from body language and facial expressions." },
+    { q:"Which of these is a key component of active listening?", opts:["Interrupting to clarify","Planning your next response","Summarizing the speaker's points","Looking at your phone"], correct:2, explain:"Summarizing shows you have processed the information and are seeking to confirm understanding." },
+    { q:"What does an open posture typically signal in a conversation?", opts:["Boredom","Defensiveness","Receptivity and honesty","Aggression"], correct:2, explain:"An open posture suggests you are comfortable and willing to listen to the other person." },
+    { q:"Why is empathy important in communication?", opts:["It helps you win arguments","It allows you to manipulate others","It helps build trust and minimize conflict","It is not important"], correct:2, explain:"Empathy allows you to understand the emotional context, making your communication more effective." },
+    { q:"What is 'listening with the intent to understand' called?", opts:["Passive listening","Active listening","Selective hearing","Critical listening"], correct:1, explain:"Active listening is defined by the effort to fully grasp the speaker's meaning and intent." }
+  ];
+
+  const list = document.getElementById('quizList');
+  data.forEach((item, qi)=>{
+    const card = document.createElement('div');
+    card.className = 'quiz-card';
+
+    const qWrap = document.createElement('div');
+    qWrap.className = 'quiz-q';
+    const num = document.createElement('div'); num.className='qnum'; num.textContent = qi+1;
+    const h = document.createElement('h4'); h.textContent = item.q;
+    qWrap.appendChild(num); qWrap.appendChild(h);
+    card.appendChild(qWrap);
+
+    const optsWrap = document.createElement('div');
+    optsWrap.className = 'quiz-opts';
+    let picked = null;
+    const optEls = item.opts.map((optText, oi)=>{
+      const o = document.createElement('div');
+      o.className = 'quiz-opt';
+      o.textContent = optText;
+      o.addEventListener('click', ()=>{
+        optEls.forEach(e=>e.classList.remove('picked'));
+        o.classList.add('picked');
+        picked = oi;
+      });
+      optsWrap.appendChild(o);
+      return o;
+    });
+    card.appendChild(optsWrap);
+
+    const actions = document.createElement('div');
+    actions.className = 'quiz-actions';
+    const btn = document.createElement('button');
+    btn.className = 'btn-reveal';
+    btn.textContent = 'Reveal Answer';
+    actions.appendChild(btn);
+    card.appendChild(actions);
+
+    const explain = document.createElement('div');
+    explain.className = 'quiz-explain';
+    explain.textContent = item.explain;
+    card.appendChild(explain);
+
+    btn.addEventListener('click', ()=>{
+      optEls.forEach((e,oi)=>{
+        e.style.cursor = 'default';
+        if(oi === item.correct) e.classList.add('reveal-correct');
+        else if(oi === picked) e.classList.add('reveal-wrong-pick');
+      });
+      card.classList.add('answered');
+      btn.textContent = 'Answer Revealed';
+      btn.disabled = true;
+    });
+
+    list.appendChild(card);
+  });
+})();
+
+/* ===================== SEARCH ===================== */
+(function(){
+  const input = document.getElementById('searchInput');
+  const countEl = document.getElementById('searchCount');
+  const root = document.getElementById('mainContent');
+  let marks = [];
+  let currentIdx = -1;
+  let debounceTimer = null;
+
+  function clearMarks(){
+    marks.forEach(m=>{
+      const parent = m.parentNode;
+      if(!parent) return;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+    marks = [];
+    currentIdx = -1;
+  }
+
+  function walkAndWrap(node, regex){
+    if(node.nodeType === 3){
+      const text = node.nodeValue;
+      const match = regex.exec(text);
+      if(match){
+        const frag = document.createDocumentFragment();
+        let lastIndex = 0;
+        regex.lastIndex = 0;
+        let m;
+        let any = false;
+        while((m = regex.exec(text)) !== null){
+          any = true;
+          frag.appendChild(document.createTextNode(text.slice(lastIndex, m.index)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-hit';
+          mark.textContent = m[0];
+          frag.appendChild(mark);
+          marks.push(mark);
+          lastIndex = m.index + m[0].length;
+          if(m[0].length === 0) regex.lastIndex++;
+        }
+        if(any){
+          frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+          node.parentNode.replaceChild(frag, node);
+        }
+      }
+    } else if(node.nodeType === 1 && node.tagName !== 'SCRIPT' && node.tagName !== 'STYLE' && !node.classList.contains('search-wrap')){
+      Array.from(node.childNodes).forEach(child => walkAndWrap(child, regex));
+    }
+  }
+
+  function escapeRegex(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  function runSearch(query){
+    clearMarks();
+    if(query.trim().length < 2){
+      countEl.style.display = 'none';
+      return;
+    }
+    const regex = new RegExp(escapeRegex(query), 'gi');
+    Array.from(root.children).forEach(child => walkAndWrap(child, regex));
+    if(marks.length){
+      countEl.style.display = 'inline-block';
+      countEl.textContent = marks.length;
+      currentIdx = 0;
+      marks[0].classList.add('current');
+      marks[0].scrollIntoView({behavior:'smooth', block:'center'});
+    } else {
+      countEl.style.display = 'inline-block';
+      countEl.textContent = '0';
+    }
+  }
+
+  input.addEventListener('input', (e)=>{
+    clearTimeout(debounceTimer);
+    const v = e.target.value;
+    debounceTimer = setTimeout(()=>runSearch(v), 280);
+  });
+
+  input.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' && marks.length){
+      e.preventDefault();
+      marks[currentIdx].classList.remove('current');
+      currentIdx = (currentIdx + 1) % marks.length;
+      marks[currentIdx].classList.add('current');
+      marks[currentIdx].scrollIntoView({behavior:'smooth', block:'center'});
+      countEl.textContent = (currentIdx+1) + '/' + marks.length;
+    }
+  });
+})();
+
+/* ===================== BACK TO TOP ===================== */
+(function(){
+  const btn = document.getElementById('backTop');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 480) btn.classList.add('show');
+    else btn.classList.remove('show');
+  });
+  btn.addEventListener('click', ()=>{
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+
+/* ===================== SCROLL PROGRESS ===================== */
+(function(){
+  const fill = document.getElementById('spFill');
+  const ringFill = document.getElementById('ringFill');
+  const pct = document.getElementById('spPct');
+  const circumference = 2 * Math.PI * 14;
+  function update(){
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop;
+    const max = (doc.scrollHeight - doc.clientHeight) || 1;
+    const percent = Math.min(100, Math.max(0, (scrollTop / max) * 100));
+    fill.style.width = percent + '%';
+    ringFill.style.strokeDashoffset = circumference * (1 - percent / 100);
+    pct.textContent = Math.round(percent) + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+/* ===================== MOBILE NAV ===================== */
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const sidebar = document.getElementById('sidebar');
+  btn.addEventListener('click', ()=> sidebar.classList.toggle('open'));
+  document.querySelectorAll('nav.toc a').forEach(a=>{
+    a.addEventListener('click', ()=> sidebar.classList.remove('open'));
+  });
+})();
+</script>
+</body>
+</html>
