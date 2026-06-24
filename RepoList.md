@@ -1,1 +1,11 @@
 The-Art-of-Effective-Communication
+A-Christian-Guide-for-Wisdom
+Comprehensive-Guide-for-Stress-Management
+How-to-Build-a-Strong-Team
+Prioritize-Fix-First-Strategy-Guide
+The-Aligned-Life
+The-Core-Human-Needs
+The-Daily-Loop
+The-Full-Armor-of-God
+The-LeafCutter-Ant-Strategy
+Think-in-Systems-Change-the-World
