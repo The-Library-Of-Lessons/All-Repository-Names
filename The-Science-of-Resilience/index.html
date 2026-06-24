@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Science of Resilience — Building Inner Strength</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b1a0d;
+    --bg-elev: #132816;
+    --bg-elev-2: #1d3821;
+    --bg-elev-3: #28462d;
+    --border: #2f5935;
+    --border-soft: #223d26;
+    --text: #edf8f0;
+    --text-dim: #acc4b4;
+    --text-mute: #7a9e81;
+
+    --amber: #ffca38;
+    --amber-soft: rgba(255,202,56,.13);
+    --teal: #38ffdf;
+    --teal-soft: rgba(56,255,223,.13);
+    --coral: #ff7b5c;
+    --coral-soft: rgba(255,123,92,.13);
+    --violet: #8bc3fa;
+    --violet-soft: rgba(139,195,250,.13);
+
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --sidebar-w: 268px;
+    --topbar-h: 68px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 600px at 85% -10%, rgba(56,255,223,.08), transparent 60%),
+      radial-gradient(800px 500px at -10% 20%, rgba(255,202,56,.06), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display); margin:0; letter-spacing:-0.01em;}
+  p{margin:0 0 14px;}
+  a{color:inherit;}
+
+  .sidebar{
+    position:fixed; top:0; left:0; bottom:0; width:var(--sidebar-w);
+    background:var(--bg-elev);
+    border-right:1px solid var(--border-soft);
+    padding:22px 16px;
+    display:flex; flex-direction:column;
+    z-index:40;
+    overflow-y:auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px; padding-bottom:20px;}
+  .brand-mark{width:34px; height:34px; border-radius:10px; background:conic-gradient(from 180deg, var(--teal), var(--amber), var(--violet), var(--coral), var(--teal)); position:relative;}
+  .brand-mark::after{content:""; position:absolute; inset:4px; border-radius:7px; background:var(--bg-elev);}
+  .brand-name{font-family:var(--font-display); font-weight:700; font-size:15px;}
+
+  nav.toc{display:flex; flex-direction:column; gap:2px; margin-top:6px;}
+  nav.toc a{
+    display:flex; align-items:center; gap:11px;
+    padding:9px 10px; border-radius:var(--radius-sm);
+    color:var(--text-dim); text-decoration:none; font-size:13.5px; font-weight:500;
+  }
+  nav.toc a:hover{background:var(--bg-elev-2); color:var(--text);}
+
+  .topbar{
+    position:fixed; top:0; left:var(--sidebar-w); right:0; height:var(--topbar-h);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:0 28px;
+    background:rgba(11,26,13,.78);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+    z-index:30;
+  }
+
+  main{margin-left:var(--sidebar-w); padding-top:var(--topbar-h);}
+  section{padding:64px 48px; max-width:980px; border-bottom:1px solid var(--border-soft);}
+
+  .hero h1{font-size:42px; line-height:1.12; font-weight:700;}
+  .hero .accent{color:var(--teal);}
+
+  .quiz-container{background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;}
+  .quiz-card{margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid var(--border-soft);}
+  .quiz-opts{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .quiz-opt{background:var(--bg-elev-2); border:1px solid var(--border); border-radius:var(--radius-md); padding:14px 18px; cursor:pointer;}
+  .btn-reveal{background:var(--teal); color:var(--bg); border:none; border-radius:var(--radius-sm); padding:10px 20px; font-weight:700; cursor:pointer;}
+
+  @media (max-width: 1024px){
+    .sidebar{display:none;}
+    .topbar{left:0;}
+    main{margin-left:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-name">Resilience Science</div>
+  </div>
+  <nav class="toc">
+    <a href="#top">The Resilience Factor</a>
+    <a href="#neurobiology">Neurobiology</a>
+    <a href="#strategies">Coping Strategies</a>
+    <a href="#quiz">Assessment</a>
+  </nav>
+</div>
+
+<header class="topbar">
+  <div class="topbar-title">The Science of Resilience</div>
+</header>
+
+<main>
+  <section id="top">
+    <div class="hero">
+      <h1>The <span class="accent">Biology of Bounce-Back</span></h1>
+      <p>Resilience is the process of adapting well in the face of adversity, trauma, tragedy, threats, or significant sources of stress.</p>
+    </div>
+  </section>
+
+  <section id="neurobiology">
+    <h2>The Neurobiology of Resilience</h2>
+    <p>Resilience is not just a personality trait; it involves biological systems including the brain's prefrontal cortex and amygdala.</p>
+  </section>
+
+  <section id="quiz">
+    <h2>Assessment</h2>
+    <div id="quizList" class="quiz-container">
+      <div class="quiz-card">
+        <h4>Which part of the brain is heavily involved in regulating emotional responses and resilience?</h4>
+        <div class="quiz-opts">
+          <div class="quiz-opt">Occipital lobe</div>
+          <div class="quiz-opt">Prefrontal cortex</div>
+          <div class="quiz-opt">Cerebellum</div>
+          <div class="quiz-opt">Brainstem</div>
+        </div>
+        <div class="quiz-actions" style="margin-top:20px; display:flex; justify-content:flex-end;">
+          <button class="btn-reveal">Reveal Answer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
