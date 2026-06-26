@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Art of Effective Communication — A Comprehensive Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg:        #0C1A2E;
+    --bg2:       #132340;
+    --bg3:       #1A2F52;
+    --teal:      #2ECFB8;
+    --teal-dim:  #1A7A6E;
+    --amber:     #F0A832;
+    --amber-dim: #8A5E18;
+    --white:     #EFF3F8;
+    --grey:      #7A8FA8;
+    --danger:    #E85656;
+    --border:    rgba(46,207,184,0.18);
+    --card-bg:   rgba(26,47,82,0.7);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(12,26,46,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; gap: 4px;
+    overflow-x: auto; scrollbar-width: none;
+    padding: 12px 0;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  nav a {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; letter-spacing: 0.04em;
+    color: var(--grey); text-decoration: none;
+    white-space: nowrap;
+    padding: 6px 12px; border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+  nav a:hover, nav a.active {
+    color: var(--teal); border-color: var(--border);
+    background: rgba(46,207,184,0.08);
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    overflow: hidden;
+  }
+  #hero-canvas {
+    position: absolute; inset: 0;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; letter-spacing: 0.15em;
+    color: var(--teal); text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 900px;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--teal);
+  }
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 18px; color: var(--grey);
+    max-width: 600px; line-height: 1.65;
+  }
+  .hero-cta {
+    margin-top: 48px;
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px; letter-spacing: 0.06em;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--teal); color: var(--bg);
+    font-weight: 700;
+  }
+  .btn-primary:hover { background: #3DDFCA; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    border: 1px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+  .hero-stat-row {
+    margin-top: 60px;
+    display: flex; gap: 40px; flex-wrap: wrap; justify-content: center;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .val {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700;
+    color: var(--amber);
+  }
+  .hero-stat .lbl {
+    font-size: 12px; color: var(--grey); margin-top: 2px;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    max-width: 1100px; margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .section-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    color: var(--teal); text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-lead {
+    font-size: 17px; color: var(--grey);
+    max-width: 680px; margin-bottom: 48px;
+    line-height: 1.7;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  /* ─── DEFINITION BOX ─── */
+  .def-box {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
+    background: var(--card-bg);
+    border-radius: 0 12px 12px 0;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+  }
+  .def-box p { font-size: 17px; line-height: 1.75; }
+  .def-box strong { color: var(--teal); }
+
+  /* ─── CARDS GRID ─── */
+  .cards { display: grid; gap: 20px; }
+  .cards-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cards-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover { border-color: var(--teal-dim); transform: translateY(-2px); }
+  .card-icon {
+    font-size: 28px; margin-bottom: 14px;
+    display: block;
+  }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 10px; color: var(--white);
+  }
+  .card p { font-size: 14px; color: var(--grey); line-height: 1.7; }
+
+  /* ─── EXAMPLES (accordion) ─── */
+  .examples-list { display: flex; flex-direction: column; gap: 12px; }
+  .example-item {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .example-item:hover { border-color: var(--teal-dim); }
+  .example-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+    background: var(--card-bg);
+    transition: background 0.2s;
+  }
+  .example-header:hover { background: rgba(46,207,184,0.06); }
+  .example-avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--bg3);
+    border: 2px solid var(--teal-dim);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .example-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    flex: 1;
+  }
+  .example-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; color: var(--teal);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .example-arrow {
+    color: var(--grey); font-size: 18px;
+    transition: transform 0.3s;
+  }
+  .example-item.open .example-arrow { transform: rotate(90deg); }
+  .example-body {
+    display: none;
+    padding: 0 24px 24px;
+    background: rgba(12,26,46,0.5);
+    border-top: 1px solid var(--border);
+  }
+  .example-item.open .example-body { display: block; }
+  .example-body p { font-size: 14px; color: var(--grey); line-height: 1.75; margin-top: 16px; }
+
+  /* ─── SUMMARY LESSONS ─── */
+  .lessons-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .lesson {
+    display: flex; gap: 16px; align-items: flex-start;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .lesson-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: var(--teal);
+    background: rgba(46,207,184,0.1);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 8px; flex-shrink: 0;
+  }
+  .lesson p { font-size: 14px; color: var(--grey); line-height: 1.65; }
+  .lesson strong { color: var(--white); }
+
+  /* ─── POWER LINE ─── */
+  .power-line-box {
+    background: linear-gradient(135deg, rgba(46,207,184,0.1) 0%, rgba(240,168,50,0.08) 100%);
+    border: 1px solid var(--teal-dim);
+    border-radius: 16px; padding: 48px;
+    text-align: center; margin-top: 60px;
+    position: relative; overflow: hidden;
+  }
+  .power-line {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 30px);
+    font-style: italic; line-height: 1.4;
+    color: var(--white); max-width: 800px; margin: 0 auto;
+  }
+
+  /* ─── SOURCES ─── */
+  .sources-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .sources-list li {
+    display: flex; gap: 14px; align-items: baseline;
+    font-size: 14px; color: var(--grey);
+  }
+  .src-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; color: var(--teal); flex-shrink: 0;
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ─── PROGRESS BAR ─── */
+  #progress {
+    position: fixed; top: 0; left: 0; z-index: 200;
+    height: 3px; background: var(--teal);
+    width: 0%; transition: width 0.1s;
+  }
+
+  /* ─── BACK TO TOP ─── */
+  #back-top {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--teal); color: var(--bg);
+    border: none; cursor: pointer;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s; z-index: 100;
+  }
+  #back-top.visible { opacity: 1; pointer-events: all; }
+
+  @media (max-width: 640px) {
+    .power-line-box { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav aria-label="Section navigation">
+  <div class="nav-inner">
+    <a href="#hero">Overview</a>
+    <a href="#what">Definition</a>
+    <a href="#why">Importance</a>
+    <a href="#how">Skills</a>
+    <a href="#examples">Case Studies</a>
+    <a href="#summary">Lessons</a>
+    <a href="#sources">Sources</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <p class="hero-eyebrow">A Comprehensive Guide</p>
+  <h1 class="hero-title">The Art of Effective Communication</h1>
+  <p class="hero-sub">Communication is not just about what you say, but how it is received. Master the tools of verbal, non-verbal, and emotional exchange to build stronger relationships and lead with impact.</p>
+  <div class="hero-cta">
+    <a href="#what" class="btn btn-primary">Start Reading →</a>
+    <a href="#how" class="btn btn-outline">Jump to How-To</a>
+  </div>
+  <div class="hero-stat-row">
+    <div class="hero-stat"><div class="val">6</div><div class="lbl">Core Principles</div></div>
+    <div class="hero-stat"><div class="val">10+</div><div class="lbl">Real-World Examples</div></div>
+    <div class="hero-stat"><div class="val">∞</div><div class="lbl">Better Decisions</div></div>
+  </div>
+</div>
+
+<!-- WHAT -->
+<section id="what">
+  <p class="section-eyebrow reveal">The Foundation</p>
+  <h2 class="section-title reveal">What Is It?</h2>
+  <div class="def-box reveal">
+    <p>Effective Communication is not just about the transmission of a message, but its successful reception and understanding. It involves active listening, empathy, and the alignment of verbal and non-verbal cues to create a shared reality between participants.</p>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- WHY -->
+<section id="why">
+  <p class="section-eyebrow reveal">The Necessity</p>
+  <h2 class="section-title reveal">Why It Matters</h2>
+  <div class="cards cards-2 reveal">
+        <div class="card">
+      <span class="card-icon">🤝</span>
+      <h3>Building Trust</h3>
+      <p>Trust is the currency of all human interaction. Clear, honest, and consistent communication is the only way to earn and maintain it over time.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🧭</span>
+      <h3>Navigating Conflict</h3>
+      <p>Most conflicts arise from misunderstandings. Mastering communication gives you the tools to de-escalate tension and find common ground where others see only walls.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🚀</span>
+      <h3>Leading with Impact</h3>
+      <p>A leader without the ability to communicate a vision is simply a person taking a walk. To move people, you must be able to touch their hearts and minds with your words.</p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🌍</span>
+      <h3>Cross-Cultural Success</h3>
+      <p>Our world is diverse. Understanding the nuances of different communication styles allows you to collaborate effectively across boundaries of all kinds.</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- HOW -->
+<section id="how">
+  <p class="section-eyebrow reveal">The Skills</p>
+  <h2 class="section-title reveal">The Pillars of Mastery</h2>
+  <div class="cards cards-3 reveal">
+        <div class="card"><h3>Active Listening</h3><p>Focusing entirely on the speaker, acknowledging the message, and providing feedback to ensure understanding.</p></div>
+    <div class="card"><h3>Non-Verbal Awareness</h3><p>Understanding how body language, eye contact, and tone of voice impact the perceived message.</p></div>
+    <div class="card"><h3>Empathy</h3><p>The ability to understand and share the feelings of another, which is essential for connection.</p></div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- EXAMPLES -->
+<section id="examples">
+  <p class="section-eyebrow reveal">Proof It Works</p>
+  <h2 class="section-title reveal">Case Studies</h2>
+  <div class="examples-list reveal">
+        <div class="example-item">
+      <div class="example-header" onclick="toggleExample(this)">
+        <div class="example-avatar">💬</div>
+        <div>
+          <div class="example-name">Apollo 13 — Precision Communication in Crisis</div>
+          <div class="example-type">Case Study</div>
+        </div>
+        <span class="example-arrow">›</span>
+      </div>
+      <div class="example-body">
+        <p>During the Apollo 13 mission, when an oxygen tank exploded, communication between the crew and Mission Control became the difference between life and death. Every word had to be precise, calm, and focused on solutions.</p><p><strong>The Lesson:</strong> In a crisis, strip away the ego and the noise. Use clear, standardized language and verify that every instruction is understood and acknowledged.</p>
+      </div>
+    </div>
+    <div class="example-item">
+      <div class="example-header" onclick="toggleExample(this)">
+        <div class="example-avatar">💬</div>
+        <div>
+          <div class="example-name">Nelson Mandela — The Power of Empathy and Language</div>
+          <div class="example-type">Case Study</div>
+        </div>
+        <span class="example-arrow">›</span>
+      </div>
+      <div class="example-body">
+        <p>Nelson Mandela spent years learning Afrikaans while in prison so he could speak to his captors in their own tongue. This act of communicative empathy allowed him to bridge gaps that seemed impossible to cross.</p><p><strong>The Lesson:</strong> To influence someone, you must speak their 'language'—not just literally, but culturally and emotionally. Meeting people where they are is the first step to moving them.</p>
+      </div>
+    </div>
+    <div class="example-item">
+      <div class="example-header" onclick="toggleExample(this)">
+        <div class="example-avatar">💬</div>
+        <div>
+          <div class="example-name">Steve Jobs — Storytelling and the 'Rule of Three'</div>
+          <div class="example-type">Case Study</div>
+        </div>
+        <span class="example-arrow">›</span>
+      </div>
+      <div class="example-body">
+        <p>Steve Jobs was famous for his keynote presentations. He used the 'Rule of Three' (presenting things in groups of three) and narrative arcs to turn product specs into compelling stories.</p><p><strong>The Lesson:</strong> Simplicity and structure help the audience retain information. Don't just dump data; craft a journey that leads to a clear destination.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <p class="section-eyebrow reveal">The Big Picture</p>
+  <h2 class="section-title reveal">Summary of All Lessons</h2>
+  <div class="lessons-grid reveal">
+        <div class="lesson">
+      <span class="lesson-num">L01</span>
+      <p><strong>Communication is the response you get.</strong> If you aren't getting the result you want, the message hasn't landed. Ownership of the outcome lies with the sender, not just the receiver.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L02</span>
+      <p><strong>Listen to understand, not to reply.</strong> Most people listen while preparing their next point. Active listening requires silencing your inner monologue to fully absorb the speaker's intent.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L03</span>
+      <p><strong>Non-verbal cues speak louder than words.</strong> Tone, posture, and eye contact often carry more weight than the actual vocabulary used. Align your body with your message.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L04</span>
+      <p><strong>Clarity is kindness.</strong> Ambiguity leads to anxiety. Being direct and specific saves time and prevents resentment, even when the message is difficult.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L05</span>
+      <p><strong>Emotional intelligence is the foundation.</strong> Recognizing your own triggers and the emotions of others allows you to navigate sensitive conversations without escalating tension.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L06</span>
+      <p><strong>Context shapes the message.</strong> Where and when you speak matters as much as what you say. Tailor your delivery to the environment and the audience's current state.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L07</span>
+      <p><strong>Feedback is a gift, if delivered correctly.</strong> Use the 'SBI' model: Situation, Behavior, and Impact. Focus on actions that can be changed, not on personal character traits.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L08</span>
+      <p><strong>Storytelling makes data memorable.</strong> Humans are wired for narratives. Use stories to give meaning to facts and figures, making them stick in the listener's mind.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L09</span>
+      <p><strong>Conflict is an opportunity for growth.</strong> Avoidance solves nothing. Healthy disagreement, handled with respect and curiosity, leads to better ideas and deeper trust.</p>
+    </div>
+    <div class="lesson">
+      <span class="lesson-num">L10</span>
+      <p><strong>Authenticity builds trust.</strong> People can sense a script. Vulnerability and honesty are more persuasive than polished perfection.</p>
+    </div>
+
+  </div>
+
+  <div class="power-line-box reveal">
+    <p class="power-line">"Effective communication is the bridge between confusion and clarity, and the foundation upon which all human collaboration is built."</p>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- SOURCES -->
+<section id="sources" style="padding-bottom: 40px;">
+  <p class="section-eyebrow reveal">References</p>
+  <h2 class="section-title reveal">Sources</h2>
+  <ul class="sources-list reveal">
+        <li><span class="src-num">[1]</span><span>Carnegie, D. (1936). How to Win Friends and Influence People.</span></li>
+    <li><span class="src-num">[2]</span><span>Stone, D., Patton, B., & Heen, S. (1999). Difficult Conversations.</span></li>
+    <li><span class="src-num">[3]</span><span>Voss, C. (2016). Never Split the Difference.</span></li>
+    <li><span class="src-num">[4]</span><span>Cialdini, R. B. (1984). Influence: The Psychology of Persuasion.</span></li>
+    <li><span class="src-num">[5]</span><span>Goleman, D. (1995). Emotional Intelligence.</span></li>
+
+  </ul>
+</section>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+// ─── HERO CANVAS ANIMATION ───
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let nodes = [], edges = [], W, H, raf;
+
+function resizeCanvas() {
+  W = canvas.width = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+}
+
+function initNodes() {
+  nodes = [];
+  const count = Math.floor((W * H) / 22000);
+  for (let i = 0; i < count; i++) {
+    nodes.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2.5 + 1
+    });
+  }
+}
+
+function drawFrame() {
+  ctx.clearRect(0, 0, W, H);
+  nodes.forEach(n => {
+    n.x += n.vx; n.y += n.vy;
+    if (n.x < 0 || n.x > W) n.vx *= -1;
+    if (n.y < 0 || n.y > H) n.vy *= -1;
+  });
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(46,207,184,${(1 - dist/120) * 0.4})`;
+        ctx.lineWidth = 0.6;
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+  nodes.forEach(n => {
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(46,207,184,0.6)';
+    ctx.fill();
+  });
+  raf = requestAnimationFrame(drawFrame);
+}
+
+const hero = document.getElementById('hero');
+const ro = new ResizeObserver(() => {
+  canvas.style.width = hero.offsetWidth + 'px';
+  canvas.style.height = hero.offsetHeight + 'px';
+  resizeCanvas(); initNodes();
+});
+ro.observe(hero);
+resizeCanvas(); initNodes(); drawFrame();
+
+// ─── SCROLL PROGRESS ───
+const progressBar = document.getElementById('progress');
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.width = (window.scrollY / total * 100) + '%';
+  backTop.classList.toggle('visible', window.scrollY > 600);
+});
+
+// ─── SCROLL REVEAL ───
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+revealEls.forEach(el => obs.observe(el));
+
+// ─── EXAMPLE ACCORDION ───
+function toggleExample(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+}
+
+// ─── ACTIVE NAV ───
+const sections = document.querySelectorAll('section[id], div[id="hero"]');
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
