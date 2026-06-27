@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 def generate_html(topic_name, content_data, template_path, output_path):
     with open(template_path, 'r', encoding='utf-8') as f:
@@ -74,24 +75,47 @@ def generate_html(topic_name, content_data, template_path, output_path):
         html = html.replace(placeholder, value)
 
     # Ensure output directory exists
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    output_dir = os.path.dirname(output_path)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
 
 if __name__ == "__main__":
-    # This part is for local testing/single generation
-    content_file = 'content.json'
     template_file = 'template.html'
+
+    if len(sys.argv) > 1:
+        content_file = sys.argv[1]
+        if len(sys.argv) > 2:
+            output_file = sys.argv[2]
+        elif os.path.exists(content_file):
+            # Automatic output file determination if not provided
+            with open(content_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            topic_name = data.get('topic_name', 'Interactive Guide')
+            folder_name = topic_name.replace(" ", "-")
+            output_file = os.path.join(folder_name, 'index.html')
+        else:
+            output_file = None
+    else:
+        # Default behavior
+        content_file = 'content.json'
+        output_file = None # Will be determined from content
 
     if os.path.exists(content_file) and os.path.exists(template_file):
         with open(content_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        # Topic name from content or directory-friendly name
-        topic_name = data.get('topic_name', 'The Science of Entering Flow')
-        folder_name = topic_name.replace(" ", "-")
-        output_file = os.path.join(folder_name, 'index.html')
+        if not output_file:
+            topic_name = data.get('topic_name', 'The Science of Entering Flow')
+            folder_name = topic_name.replace(" ", "-")
+            output_file = os.path.join(folder_name, 'index.html')
+        else:
+            topic_name = data.get('topic_name', 'Interactive Guide')
 
         generate_html(topic_name, data, template_file, output_file)
         print(f"Generated {output_file} for {topic_name}")
+    else:
+        print(f"Error: {content_file} or {template_file} not found.")
+        sys.exit(1)
