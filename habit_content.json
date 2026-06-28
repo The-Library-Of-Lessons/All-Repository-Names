@@ -1,0 +1,107 @@
+{
+  "topic_name": "How to Build Good Habits and Break Bad Habits",
+  "hero_sub": "Your life is the sum of your habits. Learn the science of behavioral change and how small, 1% improvements can lead to remarkable results over time.",
+  "definition": "Habits are the compound interest of self-improvement. They are small, repetitive actions that, over time, shape your identity and determine your success. Building good habits and breaking bad ones is not about willpower, but about designing your environment and understanding the four-step loop of cue, craving, response, and reward.",
+  "hero_stats": [
+    { "val": "1%", "lbl": "Daily Improvement" },
+    { "val": "37x", "lbl": "Better in a Year" }
+  ],
+  "why_cards": [
+    {
+      "icon": "📈",
+      "title": "Compounding Results",
+      "desc": "Small changes seem insignificant in the moment, but their impact over months and years is enormous."
+    },
+    {
+      "icon": "🆔",
+      "title": "Identity Transformation",
+      "desc": "The most effective way to change your habits is to focus not on what you want to achieve, but on who you wish to become."
+    },
+    {
+      "icon": "🧠",
+      "title": "Cognitive Ease",
+      "desc": "Habits reduce cognitive load by automating routine tasks, freeing up your mental energy for more important decisions."
+    },
+    {
+      "icon": "🛡️",
+      "title": "Environment Design",
+      "desc": "By changing your surroundings, you can make good habits inevitable and bad habits impossible."
+    }
+  ],
+  "pillars": [
+    {
+      "title": "The 4 Laws of Behavior Change",
+      "desc": "To build a habit: Make it Obvious, Attractive, Easy, and Satisfying. To break one: Make it Invisible, Unattractive, Difficult, and Unsatisfying."
+    },
+    {
+      "title": "Habit Stacking",
+      "desc": "Tie a new habit to an existing one using the formula: 'After [Current Habit], I will [New Habit].'"
+    },
+    {
+      "title": "The 2-Minute Rule",
+      "desc": "When starting a new habit, it should take less than two minutes to do. Focus on showing up first."
+    }
+  ],
+  "case_studies": [
+    {
+      "name": "British Cycling — The Aggregation of Marginal Gains",
+      "desc": "Dave Brailsford transformed British Cycling by seeking a 1% improvement in everything they did—from the aerodynamics of the bike to the pillows the riders slept on.",
+      "lesson": "Small, incremental improvements across multiple areas compound into a massive competitive advantage."
+    },
+    {
+      "name": "The Vietnam War — Environmental Influence on Addiction",
+      "desc": "During the Vietnam War, many soldiers became addicted to heroin. Surprisingly, 90% of them quit overnight upon returning home because their environment changed.",
+      "lesson": "Your environment is the invisible hand that shapes your human behavior. Change the cues, and you change the habit."
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Focus on Systems, Not Goals.",
+      "desc": "Goals are about the results you want to achieve. Systems are about the processes that lead to those results."
+    },
+    {
+      "title": "Make it Obvious (The Cue).",
+      "desc": "Use implementation intentions: 'I will [BEHAVIOR] at [TIME] in [LOCATION].'"
+    },
+    {
+      "title": "Make it Attractive (The Craving).",
+      "desc": "Use temptation bundling: Link an action you want to do with an action you need to do."
+    },
+    {
+      "title": "Make it Easy (The Response).",
+      "desc": "Reduce friction. Prepare your environment so that the good habit is the path of least resistance."
+    },
+    {
+      "title": "Make it Satisfying (The Reward).",
+      "desc": "Use immediate reinforcement. Give yourself a small reward immediately after completing the habit."
+    },
+    {
+      "title": "The Goldilocks Rule.",
+      "desc": "Maintain motivation by working on tasks of 'just right' difficulty—not too hard, not too easy."
+    },
+    {
+      "title": "Never Miss Twice.",
+      "desc": "The first mistake is never the one that ruins you. It is the spiral of repeated mistakes that follows."
+    },
+    {
+      "title": "Track Your Habits.",
+      "desc": "A habit tracker provides visual proof of your progress and acts as an immediate reward."
+    },
+    {
+      "title": "Surround Yourself with the Right People.",
+      "desc": "Join a culture where your desired behavior is the normal behavior. We imitate the habits of the close, the many, and the powerful."
+    },
+    {
+      "title": "Identity-Based Habits.",
+      "desc": "Decide the type of person you want to be. Prove it to yourself with small wins."
+    }
+  ],
+  "power_line": "You do not rise to the level of your goals. You fall to the level of your systems.",
+  "sources": [
+    "Clear, J. (2018). Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
+    "Duhigg, C. (2012). The Power of Habit: Why We Do What We Do in Life and Business.",
+    "Fogg, B.J. (2019). Tiny Habits: The Small Changes That Change Everything.",
+    "Rubin, G. (2015). Better Than Before: What I Learned About Making and Breaking Habits.",
+    "Wood, W. (2019). Good Habits, Bad Habits: The Science of Making Positive Changes That Stick."
+  ]
+}
