@@ -1,0 +1,113 @@
+{
+  "topic_name": "Mastering Emotional Intelligence",
+  "hero_sub": "Unlock the power of your emotions to enhance self-awareness, regulate your responses, and build more meaningful connections with others.",
+  "definition": "Emotional Intelligence (EQ) is the ability to recognize, understand, and manage our own emotions while also recognizing, understanding, and influencing the emotions of others. It is a critical factor in personal well-being and professional success.",
+  "hero_stats": [
+    {
+      "val": "58%",
+      "lbl": "Job Performance Link"
+    },
+    {
+      "val": "5",
+      "lbl": "Core Components"
+    }
+  ],
+  "why_cards": [
+    {
+      "icon": "\ud83e\uddd8",
+      "title": "Improved Well-being",
+      "desc": "High EQ helps in managing stress, reducing anxiety, and maintaining a positive outlook even in challenging times."
+    },
+    {
+      "icon": "\ud83e\udd1d",
+      "title": "Stronger Relationships",
+      "desc": "Understanding and empathizing with others' emotions leads to deeper trust and more collaborative interactions."
+    },
+    {
+      "icon": "\u2696\ufe0f",
+      "title": "Better Decision Making",
+      "desc": "By recognizing emotional biases, you can make more rational, balanced, and effective decisions."
+    },
+    {
+      "icon": "\ud83d\udc51",
+      "title": "Effective Leadership",
+      "desc": "EQ is the differentiator between a good manager and a great leader who inspires and motivates their team."
+    }
+  ],
+  "pillars": [
+    {
+      "title": "Self-Awareness",
+      "desc": "The ability to recognize your emotions as they happen and understand your tendencies in various situations."
+    },
+    {
+      "title": "Self-Management",
+      "desc": "Using your awareness of your emotions to stay flexible and positively direct your behavior."
+    },
+    {
+      "title": "Social Awareness",
+      "desc": "The ability to pick up on emotions in other people and understand what is really going on with them."
+    }
+  ],
+  "case_studies": [
+    {
+      "name": "Herb Kelleher \u2014 The Soul of Southwest Airlines",
+      "desc": "Kelleher built a massively successful airline by prioritizing emotional connection\u2014both with employees and customers. He led with humor, empathy, and genuine care.",
+      "lesson": "Emotional intelligence is not a 'soft skill'; it's a competitive advantage that can define an entire organization's culture and success."
+    },
+    {
+      "name": "Abraham Lincoln \u2014 Managing Team of Rivals",
+      "desc": "Lincoln demonstrated incredible EQ by bringing his political opponents into his cabinet and managing their strong personalities and emotions toward a unified national goal.",
+      "lesson": "High EQ allows a leader to transcend personal ego and focus on the collective mission by understanding and aligning diverse emotional drivers."
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Identify your Emotional Triggers.",
+      "desc": "Notice which situations or people cause you to feel strong emotions. Understanding these triggers is the first step toward managing them."
+    },
+    {
+      "title": "Practice the '6-Second Rule'.",
+      "desc": "When you feel a surge of emotion, wait six seconds before responding. This allows the chemicals of emotion to dissipate and your rational brain to take over."
+    },
+    {
+      "title": "Develop Active Empathy.",
+      "desc": "Try to see the world through someone else's eyes. Ask yourself, 'What might they be feeling right now and why?'"
+    },
+    {
+      "title": "Label your Emotions.",
+      "desc": "Putting a name to what you're feeling ('I feel frustrated' rather than just 'I feel bad') reduces the intensity of the emotion."
+    },
+    {
+      "title": "Maintain a 'Mood Journal'.",
+      "desc": "Track your emotions throughout the day to identify patterns and understand how your environment affects your state of mind."
+    },
+    {
+      "title": "Practice Mindfulness.",
+      "desc": "Regular meditation helps you become a detached observer of your emotions, making it easier to choose your response rather than reacting impulsively."
+    },
+    {
+      "title": "Seek Feedback on your EQ.",
+      "desc": "Ask trusted colleagues or friends how they perceive your emotional reactions and your ability to handle social situations."
+    },
+    {
+      "title": "Cultivate a Positive Internal Dialogue.",
+      "desc": "Be aware of your self-talk. Replace self-criticism with self-compassion and focus on growth rather than failure."
+    },
+    {
+      "title": "Learn to Read Body Language.",
+      "desc": "Pay attention to non-verbal cues in others to better understand their underlying emotional state, even when they aren't speaking."
+    },
+    {
+      "title": "Manage your Stress Levels.",
+      "desc": "High stress impairs your EQ. Develop healthy coping mechanisms like exercise, sleep, and hobbies to stay emotionally resilient."
+    }
+  ],
+  "power_line": "Emotional intelligence is the ability to make emotions work for you, instead of against you.",
+  "sources": [
+    "Goleman, D. (1995). Emotional Intelligence.",
+    "Bradberry, T., & Greaves, J. (2009). Emotional Intelligence 2.0.",
+    "David, S. (2016). Emotional Agility.",
+    "Bracket, M. (2019). Permission to Feel.",
+    "Salovey, P., & Mayer, J. D. (1990). Emotional Intelligence."
+  ]
+}
