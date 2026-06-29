@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 def generate_html(topic_name, content_data, template_path, output_path):
     with open(template_path, 'r', encoding='utf-8') as f:
@@ -74,24 +75,40 @@ def generate_html(topic_name, content_data, template_path, output_path):
         html = html.replace(placeholder, value)
 
     # Ensure output directory exists
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    output_dir = os.path.dirname(output_path)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
 
 if __name__ == "__main__":
-    # This part is for local testing/single generation
-    content_file = 'content.json'
+    if len(sys.argv) < 2:
+        print("Usage: python3 generator.py <input_content.json> [output_path/index.html]")
+        sys.exit(1)
+
+    content_file = sys.argv[1]
     template_file = 'template.html'
 
-    if os.path.exists(content_file) and os.path.exists(template_file):
-        with open(content_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+    if not os.path.exists(content_file):
+        print(f"Error: {content_file} not found.")
+        sys.exit(1)
 
-        # Topic name from content or directory-friendly name
-        topic_name = data.get('topic_name', 'The Science of Entering Flow')
+    if not os.path.exists(template_file):
+        print(f"Error: {template_file} not found.")
+        sys.exit(1)
+
+    with open(content_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    # Topic name from content or directory-friendly name
+    topic_name = data.get('topic_name', 'The Science of Entering Flow')
+
+    if len(sys.argv) >= 3:
+        output_file = sys.argv[2]
+    else:
         folder_name = topic_name.replace(" ", "-")
         output_file = os.path.join(folder_name, 'index.html')
 
-        generate_html(topic_name, data, template_file, output_file)
-        print(f"Generated {output_file} for {topic_name}")
+    generate_html(topic_name, data, template_file, output_file)
+    print(f"Generated {output_file} for {topic_name}")

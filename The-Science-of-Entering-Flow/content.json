@@ -1,28 +1,35 @@
 {
+  "topic_name": "The Science of Entering Flow",
   "hero_sub": "Flow is the 'optimal state of consciousness' where we feel our best and perform our best. Discover the science behind total immersion and learn how to hack your focus for peak performance.",
   "definition": "Flow, a concept developed by Mihaly Csikszentmihalyi, is a state of mind in which a person becomes fully immersed in an activity. During flow, people typically experience deep enjoyment, creativity, and a total involvement with life. It is the bridge between boredom and anxiety, found at the perfect intersection of high challenge and high skill.",
   "hero_stats": [
-    { "val": "500%", "lbl": "Productivity Boost" },
-    { "val": "4", "lbl": "Core Elements" }
+    {
+      "val": "500%",
+      "lbl": "Productivity Boost"
+    },
+    {
+      "val": "4",
+      "lbl": "Core Elements"
+    }
   ],
   "why_cards": [
     {
-      "icon": "⚡",
+      "icon": "\u26a1",
       "title": "Peak Performance",
       "desc": "Flow states are linked to a 500% increase in productivity and a significant boost in creativity and problem-solving abilities."
     },
     {
-      "icon": "🧠",
+      "icon": "\ud83e\udde0",
       "title": "Deep Focus",
       "desc": "In flow, the 'inner critic' is silenced. Your brain switches from slow, conscious processing to fast, subconscious execution."
     },
     {
-      "icon": "😊",
+      "icon": "\ud83d\ude0a",
       "title": "Profound Satisfaction",
-      "desc": "Flow is autotelic—it is inherently rewarding. The more flow you experience, the higher your overall well-being and life satisfaction."
+      "desc": "Flow is autotelic\u2014it is inherently rewarding. The more flow you experience, the higher your overall well-being and life satisfaction."
     },
     {
-      "icon": "📈",
+      "icon": "\ud83d\udcc8",
       "title": "Accelerated Learning",
       "desc": "The focus and neurochemistry of flow (dopamine, norepinephrine, etc.) significantly speed up the acquisition of new skills."
     }
@@ -43,12 +50,12 @@
   ],
   "case_studies": [
     {
-      "name": "Alex Honnold — Flow on the Face of El Capitan",
+      "name": "Alex Honnold \u2014 Flow on the Face of El Capitan",
       "desc": "When Alex Honnold free-soloed El Capitan, he entered a state of total immersion. There was no room for fear or self-consciousness; every movement was precise and automatic.",
       "lesson": "Preparation is the foundation of flow. By mastering individual skills through rigorous practice, you can rely on your subconscious to take over during high-stakes performance."
     },
     {
-      "name": "John Carmack — The 'Zen' of Programming",
+      "name": "John Carmack \u2014 The 'Zen' of Programming",
       "desc": "Legendary programmer John Carmack is known for 'monk mode' sessions where he locks himself away for weeks, focusing entirely on complex code. This deep immersion led to breakthroughs in 3D graphics.",
       "lesson": "External distractions are the enemy of flow. Creating an environment that protects your focus is essential for entering and maintaining deep work states."
     }
