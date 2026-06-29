@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 def generate_html(topic_name, content_data, template_path, output_path):
     with open(template_path, 'r', encoding='utf-8') as f:
@@ -74,14 +75,16 @@ def generate_html(topic_name, content_data, template_path, output_path):
         html = html.replace(placeholder, value)
 
     # Ensure output directory exists
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    output_dir = os.path.dirname(output_path)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
 
 if __name__ == "__main__":
-    # This part is for local testing/single generation
-    content_file = 'content.json'
+    # Handle command line arguments
+    content_file = sys.argv[1] if len(sys.argv) > 1 else 'content.json'
     template_file = 'template.html'
 
     if os.path.exists(content_file) and os.path.exists(template_file):
@@ -91,7 +94,16 @@ if __name__ == "__main__":
         # Topic name from content or directory-friendly name
         topic_name = data.get('topic_name', 'The Science of Entering Flow')
         folder_name = topic_name.replace(" ", "-")
-        output_file = os.path.join(folder_name, 'index.html')
+
+        if len(sys.argv) > 2:
+            output_file = sys.argv[2]
+        else:
+            output_file = os.path.join(folder_name, 'index.html')
 
         generate_html(topic_name, data, template_file, output_file)
         print(f"Generated {output_file} for {topic_name}")
+    else:
+        if not os.path.exists(content_file):
+            print(f"Error: Content file '{content_file}' not found.")
+        if not os.path.exists(template_file):
+            print(f"Error: Template file '{template_file}' not found.")
