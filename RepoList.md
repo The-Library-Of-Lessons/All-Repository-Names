@@ -11,3 +11,7 @@ The-LeafCutter-Ant-Strategy
 Think-in-Systems-Change-the-World
 The-Science-of-Entering-Flow
 Mastering-Emotional-Intelligence
+Notebook-Navigation-System
+Peaceful-Life-Workflow
+What-Leaders-Really-Do
+What-Makes-A-Leader
