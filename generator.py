@@ -79,19 +79,38 @@ def generate_html(topic_name, content_data, template_path, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
 
+import sys
+
 if __name__ == "__main__":
-    # This part is for local testing/single generation
-    content_file = 'content.json'
+    if len(sys.argv) < 2:
+        print("Usage: python3 generator.py <content_json> [output_path]")
+        sys.exit(1)
+
+    content_file = sys.argv[1]
     template_file = 'template.html'
 
-    if os.path.exists(content_file) and os.path.exists(template_file):
-        with open(content_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+    if not os.path.exists(content_file):
+        print(f"Error: Content file '{content_file}' not found.")
+        sys.exit(1)
 
-        # Topic name from content or directory-friendly name
-        topic_name = data.get('topic_name', 'The Science of Entering Flow')
+    if not os.path.exists(template_file):
+        print(f"Error: Template file '{template_file}' not found.")
+        sys.exit(1)
+
+    with open(content_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    # Topic name from content or default
+    topic_name = data.get('topic_name', 'Unnamed Topic')
+
+    if len(sys.argv) >= 3:
+        output_file = sys.argv[2]
+    else:
         folder_name = topic_name.replace(" ", "-")
+        if not folder_name:
+            print("Error: topic_name results in empty directory name.")
+            sys.exit(1)
         output_file = os.path.join(folder_name, 'index.html')
 
-        generate_html(topic_name, data, template_file, output_file)
-        print(f"Generated {output_file} for {topic_name}")
+    generate_html(topic_name, data, template_file, output_file)
+    print(f"Generated {output_file} for {topic_name}")
