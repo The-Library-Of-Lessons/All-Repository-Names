@@ -1,0 +1,107 @@
+{
+  "topic_name": "The Art of Habit Building",
+  "hero_sub": "Habits are the compound interest of self-improvement. Learn the science of how they form and the practical strategies to design a life by intention, not by default.",
+  "definition": "A habit is a routine or behavior that is performed regularly and, in many cases, automatically. It is the brain's way of conserving energy by turning a sequence of actions into an automatic routine. The process of habit formation can be broken down into a simple four-step loop: cue, craving, response, and reward.",
+  "hero_stats": [
+    { "val": "40%", "lbl": "of Daily Actions" },
+    { "val": "66", "lbl": "Days to Automate" }
+  ],
+  "why_cards": [
+    {
+      "icon": "📈",
+      "title": "Compound Growth",
+      "desc": "Small improvements of 1% each day lead to massive results over time. Habits are the vehicle for long-term transformation."
+    },
+    {
+      "icon": "🔋",
+      "title": "Energy Efficiency",
+      "desc": "By automating routine tasks, habits free up cognitive energy for more complex decision-making and creative work."
+    },
+    {
+      "icon": "👤",
+      "title": "Identity Shifting",
+      "desc": "Every action you take is a vote for the type of person you wish to become. Your habits are how you embody your identity."
+    },
+    {
+      "icon": "🎯",
+      "title": "Consistency",
+      "desc": "Habits provide a reliable structure that ensures progress even on days when motivation is low."
+    }
+  ],
+  "pillars": [
+    {
+      "title": "The Habit Loop",
+      "desc": "Understand the mechanics of Cue (trigger), Craving (motivation), Response (action), and Reward (satisfaction)."
+    },
+    {
+      "title": "Environment Design",
+      "desc": "Make the cues of good habits obvious and the cues of bad habits invisible. Your environment shapes your behavior."
+    },
+    {
+      "title": "Identity-Based Habits",
+      "desc": "Focus on who you want to become, not what you want to achieve. The goal is not to run a marathon, but to become a runner."
+    }
+  ],
+  "case_studies": [
+    {
+      "name": "British Cycling — Marginal Gains",
+      "desc": "Dave Brailsford transformed British cycling by looking for 1% improvements in everything—from bike seats to pillows. These tiny improvements compounded into Olympic dominance.",
+      "lesson": "You don't need radical changes to see radical results. Small, consistent improvements in your daily habits are more powerful than one-off transformations."
+    },
+    {
+      "name": "The 'Paper Clip' Strategy",
+      "desc": "A young stockbroker moved 120 paper clips from one jar to another every time he made a sales call. This visual progress cue made the habit of calling addictive and led to his massive success.",
+      "lesson": "Visual cues and tracking provide immediate feedback and satisfaction, which are crucial for reinforcing the habit loop."
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Make it obvious.",
+      "desc": "Use implementation intentions: 'I will [BEHAVIOR] at [TIME] in [LOCATION].'"
+    },
+    {
+      "title": "Make it attractive.",
+      "desc": "Use temptation bundling: Pair an action you want to do with an action you need to do."
+    },
+    {
+      "title": "Make it easy.",
+      "desc": "Use the Two-Minute Rule: When you start a new habit, it should take less than two minutes to do."
+    },
+    {
+      "title": "Make it satisfying.",
+      "desc": "Give yourself an immediate reward when you complete your habit to reinforce the loop."
+    },
+    {
+      "title": "Invert the laws for bad habits.",
+      "desc": "To break a bad habit: Make it invisible, unattractive, difficult, and unsatisfying."
+    },
+    {
+      "title": "Never miss twice.",
+      "desc": "Missing once is an accident. Missing twice is the start of a new habit. Get back on track immediately."
+    },
+    {
+      "title": "Focus on systems, not goals.",
+      "desc": "Goals are about the results you want to achieve. Systems are about the processes that lead to those results."
+    },
+    {
+      "title": "Design your environment.",
+      "desc": "Be the architect of your surroundings. Prime your environment for future use."
+    },
+    {
+      "title": "The Goldilocks Rule.",
+      "desc": "Maintain motivation by working on tasks of 'just right' difficulty—not too easy, not too hard."
+    },
+    {
+      "title": "Habit Stacking.",
+      "desc": "Identify a current habit you already have and then stack your new behavior on top of it."
+    }
+  ],
+  "power_line": "You do not rise to the level of your goals. You fall to the level of your systems.",
+  "sources": [
+    "Clear, J. (2018). Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
+    "Duhigg, C. (2012). The Power of Habit: Why We Do What We Do in Life and Business.",
+    "Fogg, B.J. (2019). Tiny Habits: The Small Changes That Change Everything.",
+    "Hardy, D. (2010). The Compound Effect.",
+    "Rubin, G. (2015). Better Than Before: Mastering the Habits of Our Everyday Lives."
+  ]
+}
