@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 
 def generate_html(topic_name, content_data, template_path, output_path):
     with open(template_path, 'r', encoding='utf-8') as f:
@@ -80,9 +81,12 @@ def generate_html(topic_name, content_data, template_path, output_path):
         f.write(html)
 
 if __name__ == "__main__":
-    # This part is for local testing/single generation
-    content_file = 'content.json'
     template_file = 'template.html'
+
+    if len(sys.argv) > 1:
+        content_file = sys.argv[1]
+    else:
+        content_file = 'content.json'
 
     if os.path.exists(content_file) and os.path.exists(template_file):
         with open(content_file, 'r', encoding='utf-8') as f:
@@ -95,3 +99,5 @@ if __name__ == "__main__":
 
         generate_html(topic_name, data, template_file, output_file)
         print(f"Generated {output_file} for {topic_name}")
+    else:
+        print(f"Missing {content_file} or {template_file}")
