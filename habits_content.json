@@ -1,0 +1,107 @@
+{
+  "topic_name": "Mastering Habits",
+  "hero_sub": "Habits are the compound interest of self-improvement. Understand the neurobiology of behavior to design a life of effortless excellence.",
+  "definition": "A habit is a routine or behavior that is performed regularly and, in many cases, automatically. It is the brain's way of conserving energy by turning repetitive tasks into neural loops consisting of a cue, a craving, a response, and a reward.",
+  "hero_stats": [
+    { "val": "40%", "lbl": "Daily Actions are Habits" },
+    { "val": "66", "lbl": "Avg. Days to Form Habit" }
+  ],
+  "why_cards": [
+    {
+      "icon": "🌱",
+      "title": "Compound Growth",
+      "desc": "Small 1% improvements every day result in being 37 times better by the end of the year through the power of compounding."
+    },
+    {
+      "icon": "🧠",
+      "title": "Cognitive Ease",
+      "desc": "By automating basic behaviors, you free up mental bandwidth for complex problem-solving and creative thinking."
+    },
+    {
+      "icon": "🎯",
+      "title": "Identity Shift",
+      "desc": "True behavior change is identity change. Every action you take is a vote for the type of person you wish to become."
+    },
+    {
+      "icon": "⚡",
+      "title": "Predictable Success",
+      "desc": "You do not rise to the level of your goals; you fall to the level of your systems. Habits are the building blocks of systems."
+    }
+  ],
+  "pillars": [
+    {
+      "title": "The Habit Loop",
+      "desc": "Understanding the Cue, Craving, Response, and Reward cycle is essential for manipulating and mastering any behavior."
+    },
+    {
+      "title": "Environment Design",
+      "desc": "Make good habits obvious and bad habits invisible. Your environment is a stronger driver of behavior than willpower."
+    },
+    {
+      "title": "The 2-Minute Rule",
+      "desc": "When you start a new habit, it should take less than two minutes to do. Optimize for the starting line, not the finish line."
+    }
+  ],
+  "case_studies": [
+    {
+      "name": "British Cycling — Marginal Gains",
+      "desc": "Sir Dave Brailsford transformed British cycling by looking for 1% improvements in everything from tire grip to the pillows athletes slept on.",
+      "lesson": "Aggregating small, almost imperceptible improvements across many areas leads to radical transformation over time."
+    },
+    {
+      "name": "Jerry Seinfeld — Don't Break the Chain",
+      "desc": "Seinfeld used a wall calendar and a red marker to mark every day he wrote jokes. His only goal was to not break the chain of red X's.",
+      "lesson": "Visual progress tracking provides immediate rewards and reinforces the identity of someone who shows up every day."
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Make it Obvious.",
+      "desc": "Use implementation intentions: 'I will [BEHAVIOR] at [TIME] in [LOCATION].' Explicit plans increase follow-through."
+    },
+    {
+      "title": "Use Habit Stacking.",
+      "desc": "Pair a new habit with a current one: 'After I [CURRENT HABIT], I will [NEW HABIT].' Leverage existing neural pathways."
+    },
+    {
+      "title": "Optimize your Environment.",
+      "desc": "Place the cues for good habits in front of you and hide the triggers for bad habits. Design for the path of least resistance."
+    },
+    {
+      "title": "Make it Attractive.",
+      "desc": "Use temptation bundling. Pair an action you need to do with an action you want to do to create a dopamine spike."
+    },
+    {
+      "title": "Make it Easy.",
+      "desc": "Reduce friction for good habits and increase friction for bad ones. Make it so easy you can't say no."
+    },
+    {
+      "title": "Master the Decisive Moment.",
+      "desc": "Identify the small choices that deliver outsized impact, like putting on your running shoes or opening your book."
+    },
+    {
+      "title": "Make it Satisfying.",
+      "desc": "The brain prioritizes immediate rewards over delayed ones. Use a habit tracker to make the progress itself feel rewarding."
+    },
+    {
+      "title": "Never Miss Twice.",
+      "desc": "Missing once is an accident. Missing twice is the start of a new habit. Get back on track immediately."
+    },
+    {
+      "title": "Focus on Systems, Not Goals.",
+      "desc": "Goals are about the results you want to achieve. Systems are about the processes that lead to those results."
+    },
+    {
+      "title": "Embrace Identity-Based Habits.",
+      "desc": "Instead of saying 'I want to lose weight,' say 'I am the type of person who never misses a workout.'"
+    }
+  ],
+  "power_line": "The quality of our lives often depends on the quality of our habits. We are what we repeatedly do.",
+  "sources": [
+    "Clear, J. (2018). Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
+    "Duhigg, C. (2012). The Power of Habit: Why We Do What We Do in Life and Business.",
+    "Fogg, B.J. (2019). Tiny Habits: The Small Changes That Change Everything.",
+    "Hardy, D. (2010). The Compound Effect.",
+    "Eyal, N. (2014). Hooked: How to Build Habit-Forming Products."
+  ]
+}
